@@ -1,5 +1,5 @@
-import React from "react";
-import { Navbar } from "../index";
+import React, { useState } from "react";
+import { Navbar, Sidebar } from "../index";
 import styled from "styled-components";
 import ImgBg from "../../images/pizza-3.jpg";
 
@@ -66,9 +66,16 @@ const HeroBtn = styled.button`
 `;
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <HeroContainer>
-      <Navbar />
+      <Navbar toggle={toggleHandler} />
+      <Sidebar isOpen={isOpen} toggle={toggleHandler} />
       <HeroContent>
         <HeroItems>
           <HeroH1>Greatest Pizza Ever</HeroH1>
