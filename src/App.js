@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "./globalStyles";
-import { Navbar } from "./components";
+import { Hero } from "./components";
 
 const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Navbar />
+      <Hero />
     </BrowserRouter>
   );
 };
